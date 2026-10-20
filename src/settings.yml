@@ -27,8 +27,8 @@ recipe_overview: |-
 
   There is nothing to sign up for and no API key. Because the estimate follows typical homes in
   your ZIP, it won't reflect renovations or what makes your particular house different; it is
-  not a Zestimate or an appraisal. You can show a nickname such as "Our House" instead of the
-  place name. Works in full screen and every mashup size, in landscape and portrait.
+  not a Zestimate or an appraisal. You can show your street address, or a nickname such as
+  "Our House", as the heading instead of the place name. Works in full screen and every mashup size, in landscape and portrait.
   Data: Zillow Home Value Index, Zillow Research.
 custom_fields:
 - keyname: author_bio
@@ -55,9 +55,9 @@ custom_fields:
   optional: true
   placeholder: 2019-06
   description: Optional. Year and month you bought, e.g. 2019-06. Needed with the purchase price.
-- keyname: display_name
-  name: Display Name
+- keyname: address
+  name: Address
   field_type: string
   optional: true
-  placeholder: Our House
-  description: Optional. Shown on screen instead of the town and ZIP.
+  placeholder: 123 Main St, Springfield, IL
+  description: Optional. Shown on screen as the heading, instead of the town and ZIP. Any text works, such as a street address or a nickname like "Our House".

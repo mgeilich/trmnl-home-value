@@ -1,8 +1,10 @@
 <div class="layout layout--col layout--center gap--large">
   {% if has_value %}
     <div class="flex flex--col flex--center-x gap--small w--full">
-      <span class="title text--center lg:title--large" data-clamp="1">{{ heading }}</span>
-      <span class="value value--giga lg:value--tera value--tnums" data-value-fit="true">{{ value_full }}</span>
+      <span class="title title--large text--center lg:title--xlarge" data-clamp="1">{{ heading }}</span>
+      <div class="w--[85cqw] text--center">
+        <span class="value value--mega lg:value--giga value--tnums" data-value-fit="true">{{ value_full }}</span>
+      </div>
       <span class="label lg:label--large">{% if mode == 'estimate' %}Estimated value · {% endif %}{{ subline }}</span>
     </div>
 

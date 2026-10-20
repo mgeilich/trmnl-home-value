@@ -12,7 +12,7 @@ custom_fields:
   zip: "01983"
   purchase_price: "725000"
   purchase_date: "2019-06"
-  display_name: ""
+  address: "123 Main St, Springfield, IL"
 
 variables:
   trmnl: {}

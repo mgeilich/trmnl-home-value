@@ -1,8 +1,10 @@
 <div class="layout layout--row layout--center gap--large">
   {% if has_value %}
     <div class="flex flex--col gap--xsmall w--[66cqw] portrait:w--full">
-      <span class="title title--small lg:title--large" data-clamp="1">{{ heading }}</span>
-      <span class="value value--xxxlarge lg:value--giga value--tnums" data-value-fit="true">{{ value_full }}</span>
+      <span class="title lg:title--xlarge" data-clamp="1">{{ heading }}</span>
+      <div class="w--[56cqw] portrait:w--[85cqw]">
+        <span class="value value--xxlarge lg:value--mega value--tnums" data-value-fit="true">{{ value_full }}</span>
+      </div>
       <span class="label label--small lg:label--large" data-clamp="1">{{ subline }}</span>
     </div>
     <div class="flex flex--col gap--small portrait:hidden">

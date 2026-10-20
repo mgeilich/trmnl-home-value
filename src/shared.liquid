@@ -13,7 +13,7 @@
     assign place = city | append: ', ' | append: state
   endif
 
-  assign heading = cf.display_name | strip
+  assign heading = cf.address | strip
   if heading == ''
     if place != ''
       assign heading = place | append: ' ' | append: zip
@@ -21,7 +21,7 @@
       assign heading = cf.zip
     endif
   endif
-  assign short_heading = cf.display_name | strip
+  assign short_heading = cf.address | strip
   if short_heading == ''
     assign short_heading = place | default: heading
   endif

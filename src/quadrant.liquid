@@ -1,7 +1,9 @@
 <div class="layout layout--col layout--center gap--xsmall">
   {% if has_value %}
-    <span class="label label--small text--center lg:label--large" data-clamp="1">{{ short_heading }}</span>
-    <span class="value value--xxlarge lg:value--giga value--tnums" data-value-fit="true">{{ value_full }}</span>
+    <span class="title title--small text--center lg:title--large" data-clamp="1">{{ short_heading }}</span>
+    <div class="w--[85cqw] text--center">
+      <span class="value value--xlarge lg:value--mega value--tnums" data-value-fit="true">{{ value_full }}</span>
+    </div>
     <span class="label label--small lg:label--base" data-clamp="1">{% if f1_value != '' %}{{ f1_value }} {{ f1_label | downcase }}{% else %}{{ subline_short }}{% endif %}</span>
   {% else %}
     <span class="title title--small text--center" data-clamp="1">{{ short_heading | default: 'Home Value' }}</span>
