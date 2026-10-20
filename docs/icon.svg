@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <title>Home Value</title>
+  <g fill="none" stroke="#000" stroke-width="34" stroke-linecap="round" stroke-linejoin="round">
+    <!-- roof -->
+    <path d="M48 250 256 70l208 180"/>
+    <!-- walls -->
+    <path d="M104 208v234h304V208"/>
+    <!-- rising value line with arrowhead -->
+    <path d="M162 382l62-64 48 36 78-86"/>
+    <path d="M296 268h54v54"/>
+  </g>
+</svg>
