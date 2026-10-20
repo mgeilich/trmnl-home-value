@@ -66,7 +66,7 @@ src/quadrant.liquid
 .trmnlp.yml               local dev config for trmnlp (not uploaded)
 ```
 
-Form fields: ZIP Code (required), Purchase Price, Purchase Month (e.g. `2019-06`), Display Name (all optional).
+Form fields: ZIP Code (required), Purchase Price, Purchase Month (e.g. `2019-06`), Address (all optional; shown as the heading).
 
 | Layout | Shows |
 | --- | --- |
