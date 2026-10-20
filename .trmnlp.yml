@@ -1,0 +1,18 @@
+# trmnlp local dev config (not uploaded to TRMNL). Run: trmnlp serve
+# {{ env.VARIABLE }} interpolation is available here.
+---
+watch:
+  - .trmnlp.yml
+  - src
+
+time_zone: America/New_York
+
+# Values for the custom fields defined in src/settings.yml.
+custom_fields:
+  zip: "01983"
+  purchase_price: "725000"
+  purchase_date: "2019-06"
+  display_name: ""
+
+variables:
+  trmnl: {}

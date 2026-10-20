@@ -1,0 +1,63 @@
+#
+# Docs: https://help.trmnl.com/en/articles/10542599-importing-and-exporting-private-plugins
+#
+---
+name: Home Value Estimate
+description: Home value from Zillow ZIP data
+strategy: polling
+polling_verb: get
+# Served by the home_value Cloud Run function in ../functions (Zillow Home Value Index by ZIP).
+polling_url: https://us-central1-zestimate-trmnl-2026.cloudfunctions.net/home_value?zip={{ zip | url_encode }}&price={{ purchase_price | url_encode }}&date={{ purchase_date | url_encode }}
+polling_headers: ''
+polling_body: ''
+no_screen_padding: 'no'
+dark_mode: 'no'
+static_data: ''
+framework_version: latest
+# Zillow publishes the index once a month; a daily check is plenty.
+refresh_interval: 1440
+recipe_overview: |-
+  See what your home is worth today. Enter your ZIP code and, optionally, what you paid and
+  when. Home Value Estimate takes your purchase price and grows it by how much typical home
+  values in your ZIP have changed since you bought, using the Zillow Home Value Index (ZHVI),
+  which Zillow Research publishes monthly for over 26,000 ZIP codes. It shows the estimated
+  value today, your gain in dollars and percent, the typical home value in your ZIP, and how
+  much values there have moved over the last 12 months. Leave the purchase fields blank to
+  simply show the typical home value in any ZIP code.
+
+  There is nothing to sign up for and no API key. Because the estimate follows typical homes in
+  your ZIP, it won't reflect renovations or what makes your particular house different; it is
+  not a Zestimate or an appraisal. You can show a nickname such as "Our House" instead of the
+  place name. Works in full screen and every mashup size, in landscape and portrait.
+  Data: Zillow Home Value Index, Zillow Research.
+custom_fields:
+- keyname: author_bio
+  name: About This Plugin
+  field_type: author_bio
+  description: |-
+    Estimates your home's value from what you paid and how typical home values in your ZIP code have changed since, using the <a href="https://www.zillow.com/research/data/" class="underline">Zillow Home Value Index</a> (updated monthly).<br/><br/>
+    It follows typical homes in your ZIP, not your specific house. Data: Zillow Research.
+  github_url: https://github.com/mgeilich/trmnl-home-value
+- keyname: zip
+  name: ZIP Code
+  field_type: string
+  placeholder: '01983'
+  description: The 5-digit ZIP code of the home.
+- keyname: purchase_price
+  name: Purchase Price
+  field_type: string
+  optional: true
+  placeholder: '725000'
+  description: Optional. What you paid. Leave blank to show the typical home value in your ZIP instead.
+- keyname: purchase_date
+  name: Purchase Month
+  field_type: string
+  optional: true
+  placeholder: 2019-06
+  description: Optional. Year and month you bought, e.g. 2019-06. Needed with the purchase price.
+- keyname: display_name
+  name: Display Name
+  field_type: string
+  optional: true
+  placeholder: Our House
+  description: Optional. Shown on screen instead of the town and ZIP.

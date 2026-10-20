@@ -1,0 +1,100 @@
+{%- comment -%}
+  Shared by every view. Turns the home_value function's JSON into display strings.
+  Response (see functions/zhvi.py): mode ("estimate" | "zip"), price, purchase_price,
+  purchase_month, gain, gain_pct, zip, city, state, zip_typical_value, zip_change_1y_pct,
+  as_of, message.
+  Four optional "facts" (f1..f4 value/label) feed the small items under the big number.
+{%- endcomment -%}
+{%- liquid
+  assign cf = trmnl.plugin_settings.custom_fields_values
+
+  assign place = ''
+  if city and city != ''
+    assign place = city | append: ', ' | append: state
+  endif
+
+  assign heading = cf.display_name | strip
+  if heading == ''
+    if place != ''
+      assign heading = place | append: ' ' | append: zip
+    else
+      assign heading = cf.zip
+    endif
+  endif
+  assign short_heading = cf.display_name | strip
+  if short_heading == ''
+    assign short_heading = place | default: heading
+  endif
+
+  assign has_value = false
+  if price and price > 0
+    assign has_value = true
+  endif
+
+  assign value_full = price | round | number_with_delimiter | prepend: '$'
+  if has_value
+    if price >= 1000000
+      assign value_short = price | divided_by: 1000000.0 | round: 2 | prepend: '$' | append: 'M'
+    else
+      assign value_short = price | divided_by: 1000.0 | round | prepend: '$' | append: 'K'
+    endif
+  endif
+
+  assign as_of_label = ''
+  if as_of
+    assign as_of_label = as_of | date: '%b %Y'
+  endif
+
+  assign f1_value = ''
+  assign f1_label = ''
+  assign f2_value = ''
+  assign f2_label = ''
+  assign f3_value = ''
+  assign f3_label = ''
+  assign f4_value = ''
+  assign f4_label = ''
+
+  assign zip_1y = ''
+  if zip_change_1y_pct
+    if zip_change_1y_pct >= 0
+      assign zip_1y = zip_change_1y_pct | prepend: '+' | append: '%'
+    else
+      assign zip_1y = zip_change_1y_pct | append: '%'
+    endif
+  endif
+  assign zip_typical = zip_typical_value | divided_by: 1000.0 | round | times: 1000 | number_with_delimiter | prepend: '$'
+
+  if mode == 'estimate'
+    assign bought = purchase_price | round | number_with_delimiter | prepend: '$'
+    assign bought_when = purchase_month | date: '%b %Y'
+    assign subline = 'Bought for ' | append: bought | append: ' in ' | append: bought_when
+    assign subline_short = 'Bought ' | append: bought_when
+    if gain >= 0
+      assign f1_value = gain | round | number_with_delimiter | prepend: '+$'
+      assign f2_value = gain_pct | prepend: '+' | append: '%'
+    else
+      assign f1_value = gain | abs | round | number_with_delimiter | prepend: '−$'
+      assign f2_value = gain_pct | append: '%'
+    endif
+    assign f1_label = 'Since purchase'
+    assign f2_label = 'Change'
+    assign f3_value = zip_typical
+    assign f3_label = 'Typical in ZIP'
+    assign f4_value = zip_1y
+    assign f4_label = 'ZIP, last 12 mo'
+  else
+    assign subline = 'Typical home value in ZIP ' | append: zip
+    assign subline_short = 'Typical, ZIP ' | append: zip
+    assign f1_value = zip_1y
+    assign f1_label = 'Last 12 months'
+    assign f2_value = as_of_label
+    assign f2_label = 'Data month'
+  endif
+
+  assign error_text = message | default: 'Home value data is not available yet. It will appear at the next refresh.'
+  assign updated = as_of_label
+  if updated == ''
+    assign updated = trmnl.system.timestamp_utc | plus: trmnl.user.utc_offset | date: '%b %-d'
+  endif
+  assign house_icon = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 11.5 12 4l9 7.5'/%3E%3Cpath d='M5.5 10v10h4.5v-6h4v6h4.5V10'/%3E%3C/svg%3E"
+-%}

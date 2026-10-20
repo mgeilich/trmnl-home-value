@@ -1,0 +1,59 @@
+<div class="layout layout--col layout--center gap--large">
+  {% if has_value %}
+    <div class="flex flex--col flex--center-x gap--small w--full">
+      <span class="title text--center lg:title--large" data-clamp="1">{{ heading }}</span>
+      <span class="value value--giga lg:value--tera value--tnums" data-value-fit="true">{{ value_full }}</span>
+      <span class="label lg:label--large">{% if mode == 'estimate' %}Estimated value · {% endif %}{{ subline }}</span>
+    </div>
+
+    <div class="grid grid--cols-4 portrait:grid--cols-2 gap--medium w--full">
+      {% if f1_value != '' %}
+        <div class="item">
+          <div class="meta"></div>
+          <div class="content">
+            <span class="value value--small lg:value--base value--tnums">{{ f1_value }}</span>
+            <span class="label label--small lg:label--base">{{ f1_label }}</span>
+          </div>
+        </div>
+      {% endif %}
+      {% if f2_value != '' %}
+        <div class="item">
+          <div class="meta"></div>
+          <div class="content">
+            <span class="value value--small lg:value--base value--tnums">{{ f2_value }}</span>
+            <span class="label label--small lg:label--base">{{ f2_label }}</span>
+          </div>
+        </div>
+      {% endif %}
+      {% if f3_value != '' %}
+        <div class="item">
+          <div class="meta"></div>
+          <div class="content">
+            <span class="value value--small lg:value--base value--tnums">{{ f3_value }}</span>
+            <span class="label label--small lg:label--base">{{ f3_label }}</span>
+          </div>
+        </div>
+      {% endif %}
+      {% if f4_value != '' %}
+        <div class="item">
+          <div class="meta"></div>
+          <div class="content">
+            <span class="value value--small lg:value--base value--tnums">{{ f4_value }}</span>
+            <span class="label label--small lg:label--base">{{ f4_label }}</span>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  {% else %}
+    <div class="flex flex--col flex--center-x gap--small w--full">
+      <span class="title text--center" data-clamp="2">{{ heading | default: 'Home Value Estimate' }}</span>
+      <span class="description text--center lg:description--large" data-clamp="4">{{ error_text }}</span>
+    </div>
+  {% endif %}
+</div>
+
+<div class="title_bar">
+  <img class="image" src="{{ house_icon }}" />
+  <span class="title">Home Value</span>
+  <span class="instance">Zillow Home Value Index · {{ updated }}</span>
+</div>
