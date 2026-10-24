@@ -33,10 +33,12 @@ recipe_overview: |-
 custom_fields:
 - keyname: author_bio
   name: About This Plugin
+  category: finance,personal
   field_type: author_bio
   description: |-
     Estimates your home's value from what you paid and how typical home values in your ZIP code have changed since, using the <a href="https://www.zillow.com/research/data/" class="underline">Zillow Home Value Index</a> (updated monthly).<br/><br/>
-    It follows typical homes in your ZIP, not your specific house. Data: Zillow Research.
+    Enter your ZIP code, and optionally your purchase price and the month you bought. The plugin shows today's estimated value, your gain in dollars and percent, the typical home value in your ZIP, and how much values there have changed over the last 12 months. Leave the purchase fields blank to show the typical home value for any ZIP code. You can also show your street address or a nickname as the heading; it stays in your plugin settings and is never sent to the data server.<br/><br/>
+    There is no sign-up or API key. The estimate follows typical homes in your ZIP, not your specific house, so it is not a Zestimate or an appraisal. Data: Zillow Research. Questions and issues are welcome on <a href="https://github.com/mgeilich/trmnl-home-value" class="underline">GitHub</a>.
   github_url: https://github.com/mgeilich/trmnl-home-value
 - keyname: zip
   name: ZIP Code
