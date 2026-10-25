@@ -9,9 +9,9 @@ time_zone: America/New_York
 
 # Values for the custom fields defined in src/settings.yml.
 custom_fields:
-  zip: "01983"
-  purchase_price: "725000"
-  purchase_date: "2019-06"
+  zip: "90210"
+  purchase_price: "500000"
+  purchase_date: "2018-05"
   address: "123 Main St, Springfield, IL"
 
 variables:

@@ -9,7 +9,7 @@ No sign-up and no API key for anyone. Data: Zillow Home Value Index, Zillow Rese
 ## How it works
 
 ```
-TRMNL ──GET /home_value?zip=01983&price=725000&date=2019-06──▶ home_value (public Cloud Run function)
+TRMNL ──GET /home_value?zip=90210&price=500000&date=2018-05──▶ home_value (public Cloud Run function)
                                                                    │ reads 1 document
                                                                    ▼
 Cloud Scheduler (20th of each month) ──▶ refresh_zhvi (private) ──▶ Firestore
@@ -52,7 +52,7 @@ gcloud functions deploy refresh_zhvi --gen2 --runtime=python312 --region=us-cent
 
 Run a refresh by hand: `gcloud scheduler jobs run zhvi-monthly-refresh --location=us-central1`.
 
-Test: `curl "https://us-central1-zestimate-trmnl-2026.cloudfunctions.net/home_value?zip=01983&price=725000&date=2019-06"`
+Test: `curl "https://us-central1-zestimate-trmnl-2026.cloudfunctions.net/home_value?zip=90210&price=500000&date=2018-05"`
 
 ## The recipe
 
@@ -66,7 +66,7 @@ src/quadrant.liquid
 .trmnlp.yml               local dev config for trmnlp (not uploaded)
 ```
 
-Form fields: ZIP Code (required), Purchase Price, Purchase Month (e.g. `2019-06`), Address (all optional; shown as the heading).
+Form fields: ZIP Code (required), Purchase Price, Purchase Month (e.g. `2018-05`), Address (all optional; shown as the heading).
 
 | Layout | Shows |
 | --- | --- |

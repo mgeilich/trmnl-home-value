@@ -30,11 +30,11 @@ ZHVI_URL = ("https://files.zillowstatic.com/research/public_csvs/zhvi/"
 FIRST_MONTH_COL = 9
 
 MSG_NO_ZIP = "Add your 5-digit ZIP code in the plugin settings."
-MSG_BAD_ZIP = "That ZIP code doesn't look right. Use the 5-digit ZIP, e.g. 01983."
+MSG_BAD_ZIP = "That ZIP code doesn't look right. Use the 5-digit ZIP, e.g. 90210."
 MSG_ZIP_NOT_COVERED = ("Zillow doesn't publish a home value index for ZIP {zip}. "
                        "Try a nearby ZIP code.")
 MSG_NO_DATA = "Home value data is still loading. It will appear at the next refresh."
-MSG_BAD_DATE = "Purchase date should look like 2019-06 (year and month)."
+MSG_BAD_DATE = "Purchase date should look like 2018-05 (year and month)."
 
 
 # ---------------------------------------------------------------- parsing (refresh)
@@ -109,7 +109,7 @@ def _latest(entry: dict) -> "tuple[Optional[int], str]":
 
 
 def parse_month(text: str) -> Optional[str]:
-    """Accept 2019-06, 2019-06-14, 06/2019, 6/14/2019. Return 'YYYY-MM' or None."""
+    """Accept 2018-05, 2018-05-14, 05/2018, 5/14/2018. Return 'YYYY-MM' or None."""
     t = (text or "").strip()
     m = re.fullmatch(r"(\d{4})-(\d{1,2})(?:-\d{1,2})?", t)
     if m:

@@ -43,20 +43,20 @@ custom_fields:
 - keyname: zip
   name: ZIP Code
   field_type: string
-  placeholder: '01983'
+  placeholder: '90210'
   description: The 5-digit ZIP code of the home.
 - keyname: purchase_price
   name: Purchase Price
   field_type: string
   optional: true
-  placeholder: '725000'
+  placeholder: '500000'
   description: Optional. What you paid. Leave blank to show the typical home value in your ZIP instead.
 - keyname: purchase_date
   name: Purchase Month
   field_type: string
   optional: true
-  placeholder: 2019-06
-  description: Optional. Year and month you bought, e.g. 2019-06. Needed with the purchase price.
+  placeholder: 2018-05
+  description: Optional. Year and month you bought, e.g. 2018-05. Needed with the purchase price.
 - keyname: address
   name: Address
   field_type: string

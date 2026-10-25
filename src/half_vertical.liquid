@@ -1,19 +1,19 @@
 <div class="layout layout--col layout--center gap--medium">
   {% if has_value %}
     <div class="flex flex--col flex--center-x gap--xsmall w--full">
-      <span class="title text--center lg:title--xlarge" data-clamp="2">{{ short_heading }}</span>
+      <span class="title text--center lg:title--xlarge lg:portrait:title--xxlarge" data-clamp="2">{{ short_heading }}</span>
       <div class="w--[85cqw] text--center">
         <span class="value value--xxlarge lg:value--mega value--tnums" data-value-fit="true">{{ value_full }}</span>
       </div>
       <span class="label label--small lg:label--large" data-clamp="1">{{ subline_short }}</span>
     </div>
-    <div class="grid grid--cols-2 gap--small w--full">
+    <div class="grid grid--cols-2 lg:portrait:grid--cols-1 gap--small w--full">
       {% if f1_value != '' %}
         <div class="item">
           <div class="meta"></div>
           <div class="content">
-            <span class="value value--xsmall lg:value--small value--tnums">{{ f1_value }}</span>
-            <span class="label label--small lg:label--base">{{ f1_label }}</span>
+            <span class="value value--xsmall lg:value--small lg:portrait:value--large value--tnums">{{ f1_value }}</span>
+            <span class="label label--small lg:label--base lg:portrait:label--large">{{ f1_label }}</span>
           </div>
         </div>
       {% endif %}
@@ -21,8 +21,8 @@
         <div class="item">
           <div class="meta"></div>
           <div class="content">
-            <span class="value value--xsmall lg:value--small value--tnums">{{ f2_value }}</span>
-            <span class="label label--small lg:label--base">{{ f2_label }}</span>
+            <span class="value value--xsmall lg:value--small lg:portrait:value--large value--tnums">{{ f2_value }}</span>
+            <span class="label label--small lg:label--base lg:portrait:label--large">{{ f2_label }}</span>
           </div>
         </div>
       {% endif %}
@@ -30,8 +30,8 @@
         <div class="item">
           <div class="meta"></div>
           <div class="content">
-            <span class="value value--xsmall lg:value--small value--tnums">{{ f3_value }}</span>
-            <span class="label label--small lg:label--base">{{ f3_label }}</span>
+            <span class="value value--xsmall lg:value--small lg:portrait:value--large value--tnums">{{ f3_value }}</span>
+            <span class="label label--small lg:label--base lg:portrait:label--large">{{ f3_label }}</span>
           </div>
         </div>
       {% endif %}
@@ -39,8 +39,8 @@
         <div class="item">
           <div class="meta"></div>
           <div class="content">
-            <span class="value value--xsmall lg:value--small value--tnums">{{ f4_value }}</span>
-            <span class="label label--small lg:label--base">{{ f4_label }}</span>
+            <span class="value value--xsmall lg:value--small lg:portrait:value--large value--tnums">{{ f4_value }}</span>
+            <span class="label label--small lg:label--base lg:portrait:label--large">{{ f4_label }}</span>
           </div>
         </div>
       {% endif %}

@@ -2,7 +2,7 @@
 
 Project zestimate-trmnl-2026 (the Firebase project), region us-central1.
 
-home_value    public.  GET ?zip=01983&price=412000&date=2019-06
+home_value    public.  GET ?zip=90210&price=500000&date=2018-05
               Returns the estimate JSON the recipe renders (always HTTP 200).
 refresh_zhvi  private (no unauthenticated access). Downloads Zillow's ZIP-level ZHVI CSV
               and stores it in Firestore. Run monthly by Cloud Scheduler.
