@@ -1,4 +1,4 @@
-<div class="layout layout--row layout--center gap--large">
+<div class="layout layout--row  portrait:layout--col layout--center gap--large">
   {% if has_value %}
     <div class="flex flex--col gap--xsmall w--[66cqw] portrait:w--full">
       <span class="title lg:title--xlarge" data-clamp="1">{{ heading }}</span>
@@ -7,13 +7,13 @@
       </div>
       <span class="label label--small lg:label--large" data-clamp="1">{{ subline }}</span>
     </div>
-    <div class="flex flex--col gap--small portrait:hidden">
+    <div class="flex flex--col portrait:flex--row gap--small portrait:w--full">
       {% if f1_value != '' %}
         <div class="item">
           <div class="meta"></div>
           <div class="content">
-            <span class="value value--xsmall lg:value--base value--tnums">{{ f1_value }}</span>
-            <span class="label label--small lg:label--base">{{ f1_label }}</span>
+            <span class="value value--xsmall lg:value--base lg:portrait:lg:value--large value--tnums">{{ f1_value }}</span>
+            <span class="label label--small lg:label--base lg:portrait:lg:label--large">{{ f1_label }}</span>
           </div>
         </div>
       {% endif %}
@@ -21,8 +21,8 @@
         <div class="item">
           <div class="meta"></div>
           <div class="content">
-            <span class="value value--xsmall lg:value--base value--tnums">{{ f2_value }}</span>
-            <span class="label label--small lg:label--base">{{ f2_label }}</span>
+            <span class="value value--xsmall lg:value--base lg:portrait:lg:value--large value--tnums">{{ f2_value }}</span>
+            <span class="label label--small lg:label--base lg:portrait:lg:label--large">{{ f2_label }}</span>
           </div>
         </div>
       {% endif %}

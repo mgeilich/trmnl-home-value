@@ -8,13 +8,13 @@
       <span class="label lg:label--large">{% if mode == 'estimate' %}Estimated value · {% endif %}{{ subline }}</span>
     </div>
 
-    <div class="grid grid--cols-4 portrait:grid--cols-2 gap--medium w--full">
+    <div class="grid grid--cols-4 lg:grid--cols-2 lg:portrait:grid--cols-1 gap--medium w--full">
       {% if f1_value != '' %}
         <div class="item">
           <div class="meta"></div>
           <div class="content">
-            <span class="value value--small lg:value--base lg:portrait:value--large value--tnums">{{ f1_value }}</span>
-            <span class="label label--small lg:label--base lg:portrait:label--large">{{ f1_label }}</span>
+            <span class="value value--small lg:value--xlarge lg:portrait:value--xlarge value--tnums">{{ f1_value }}</span>
+            <span class="label label--small lg:label--xlarge lg:portrait:label--xlarge">{{ f1_label }}</span>
           </div>
         </div>
       {% endif %}
@@ -22,8 +22,8 @@
         <div class="item">
           <div class="meta"></div>
           <div class="content">
-            <span class="value value--small lg:value--base lg:portrait:value--large value--tnums">{{ f2_value }}</span>
-            <span class="label label--small lg:label--base lg:portrait:label--large">{{ f2_label }}</span>
+            <span class="value value--small lg:value--xlarge lg:portrait:value--xlarge value--tnums">{{ f2_value }}</span>
+            <span class="label label--small lg:label--xlarge lg:portrait:label--xlarge">{{ f2_label }}</span>
           </div>
         </div>
       {% endif %}
@@ -31,8 +31,8 @@
         <div class="item">
           <div class="meta"></div>
           <div class="content">
-            <span class="value value--small lg:value--base lg:portrait:value--large value--tnums">{{ f3_value }}</span>
-            <span class="label label--small lg:label--base lg:portrait:label--large">{{ f3_label }}</span>
+            <span class="value value--small lg:value--xlarge lg:portrait:value--xlarge value--tnums">{{ f3_value }}</span>
+            <span class="label label--small lg:label--xlarge lg:portrait:label--xlarge">{{ f3_label }}</span>
           </div>
         </div>
       {% endif %}
@@ -40,8 +40,8 @@
         <div class="item">
           <div class="meta"></div>
           <div class="content">
-            <span class="value value--small lg:value--base lg:portrait:value--large value--tnums">{{ f4_value }}</span>
-            <span class="label label--small lg:label--base lg:portrait:label--large">{{ f4_label }}</span>
+            <span class="value value--small lg:value--xlarge lg:portrait:value--xlarge value--tnums">{{ f4_value }}</span>
+            <span class="label label--small lg:label--xlarge lg:portrait:label--xlarge">{{ f4_label }}</span>
           </div>
         </div>
       {% endif %}
